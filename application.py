@@ -8,4 +8,4 @@ def index():
 
 @app.route('/about')
 def about():
-    return "Hello, this is from Python Flask about page"
+    return "<h2> Hello World from About page </h2>"
