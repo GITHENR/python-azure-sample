@@ -9,3 +9,7 @@ def index():
 @app.route('/about')
 def about():
     return "<h2> Hello World from About page </h2>"
+
+@app.route('/profile/<username>')
+def profile(username):
+    return "<h2> Welcome %s</h2>" % username
