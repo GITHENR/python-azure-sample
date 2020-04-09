@@ -1,5 +1,9 @@
 from flask import Flask, render_template
 app = Flask(__name__)
+from azure.storage.table import TableService, Entity
+table_service = TableService(account_name='cloudshell669196285', account_key='RVFZCljT8OJNgHFwfqwb1nig1lLHdYgPV6a2/NTF2LVFw6tpyVZdn7GZ2NU2nX1+O8A/x1fd2Q7d1ddHqYng+g==')
+task = {'PartitionKey': 'first', 'RowKey': '005',
+        'ID': '0005', 'priority': 202,'stock':75}
 
 @app.route('/')
 @app.route('/index')
@@ -8,6 +12,7 @@ def index():
 
 @app.route('/about')
 def about():
+    table_service.insert_entity('customer', task)
     return "<h2> Hello World from About page </h2>"
 
 @app.route('/profile/<name>')
