@@ -9,7 +9,8 @@ def index():
 
 @app.route('/about')
 def about():
-    return "<h2> Hello World from About page </h2>"
+    cntry = 'India'
+    return "<h2> Hello World from About page %s </h2>" %cntry
 
 @app.route('/profile/<name>')
 def profile(name):
