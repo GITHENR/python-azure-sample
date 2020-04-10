@@ -1,9 +1,6 @@
 from flask import Flask, render_template
 from azure.storage.table import TableService, Entity
-table_service = TableService(account_name='cloudshell951648231', account_key='KKCvzmYv7ZIoifbmn5TpoqaynLFEqFB617TtUeEeLJWX7FnN5V1VSrflk/kLuIKtJI5aYSKmEPJ9NTObJ1g35A==')
-task = {'PartitionKey': 'First', 'RowKey': '1000',
-        'description': 'customer1', 'priority': 200}
-table_service.update_entity('customer', task)
+
 app = Flask(__name__)
 
 
